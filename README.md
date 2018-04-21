@@ -3,14 +3,14 @@
 依赖于 [Express'](https://www.npmjs.com/package/express) application generator.    
 参考flask-appbuilder框架，进行开发。自动生成包含CURD的应用。    
 # 功能
-2018/04/21: express-generator重构版本
+2018/04/21:  重构express-generator
 
 # 时间节点
 2018/04/21:  项目启动，导出AOP函数到utils里面，更新readme，发布到npmjs
 # 如何开发
 
 ```
-1、 git@github.com:hfuuss/xiatiya.git
+1、 git clone git@github.com:hfuuss/xiatiya.git
 2、 cd xiatiya && npm install
 3、 npm link # 进行本地全局安装测试
 4、 xiatiya [options]
