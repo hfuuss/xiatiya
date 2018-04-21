@@ -1,7 +1,9 @@
 
 # 说明
 依赖于 [Express'](https://www.npmjs.com/package/express) application generator.    
-参考flask-appbuilder框架，进行开发。自动生成包含CURD的应用。
+参考flask-appbuilder框架，进行开发。自动生成包含CURD的应用。    
+# 功能
+2018/04/21: express-generator重构版本
 
 # 时间节点
 2018/04/21:  项目启动，导出AOP函数到utils里面，更新readme，发布到npmjs
