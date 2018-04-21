@@ -7,10 +7,10 @@
     "mkdirp": "0.5.1",
     "sorted-object": "2.0.0"
   },
-  "main": "bin/express",
+  "main": "bin/xiatiya",
   "preferGlobal": true,
   "bin": {
-    "express": "./bin/express"
+    "xietiya": "./bin/xiatiya"
   },
   "devDependencies": {
     "mocha": "2.5.3",

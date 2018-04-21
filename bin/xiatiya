@@ -15,9 +15,18 @@ var pkg = require('../package.json');
 
 var version = pkg.version;
 
+//AOP函数
+var around = require('../utils/aop.js').around;
+var before = require('../utils/aop.js').before;
+var confirm = require('../utils/aop.js').confirm;
+
+
+
+
+
 // Re-assign process.exit because of commander
 // TODO: Switch to a different command framework
-// 不是很懂 ???
+
 process.exit = exit //exit是下面定义的函数，重新定义了process.exit
 
 // CLI
@@ -60,48 +69,6 @@ if (!exit.exited) { //退出，貌似是由于win下面的一个bug，之后再�
   main(); //开始执行
 }
 
-/**
- * Install an around function; AOP.增加一道料
- */
-
-function around(obj, method, fn) {
-  var old = obj[method]
-
-  obj[method] = function () {
-    var args = new Array(arguments.length)
-    for (var i = 0; i < args.length; i++) args[i] = arguments[i]
-    return fn.call(this, old, args)
-  }
-}
-
-/**
- * Install a before function; AOP.
- */
-
-function before(obj, method, fn) {
-  var old = obj[method];
-
-  obj[method] = function () {
-    fn.call(this);
-    old.apply(this, arguments);
-  };
-}
-
-/**
- * Prompt for confirmation on STDOUT/STDIN 提示框
- */
-
-function confirm(msg, callback) {
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
-  rl.question(msg, function (input) {
-    rl.close();
-    callback(/^y|yes|ok|true$/i.test(input));//正则匹配如果确定。
-  });
-}
 
 /**
  * Create application at the given directory `path`.
@@ -451,7 +418,7 @@ function renamedOption(originalName, newName) {
 
 /**
  * Display a warning similar to how errors are displayed by commander.
- *
+ * 控制台警告
  * @param {String} message
  */
 
@@ -464,7 +431,7 @@ function warning(message) {
 }
 
 /**
- * echo str > path.
+ * echo str > path. 将字符串写到到某个文件里面
  *
  * @param {String} path
  * @param {String} str
@@ -477,7 +444,7 @@ function write(path, str, mode) {
 
 /**
  * Mkdir -p.
- *
+ * 创建文件夹
  * @param {String} path
  * @param {Function} fn
  */
