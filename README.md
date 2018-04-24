@@ -1,12 +1,14 @@
 
 # 说明
 依赖于 [Express'](https://www.npmjs.com/package/express) application generator.    
-参考flask-appbuilder框架，进行开发。自动生成包含CURD的应用。    
+改装成自动生成包含CURD的应用。    
 # 功能
-2018/04/21:  重构express-generator
+`$ xiatiya` 
 
 # 时间节点
-2018/04/21:  项目启动，导出AOP函数到utils里面，更新readme，发布到npmjs
+2018/04/21:  项目启动，导出AOP函数到utils的aop.js里面，更新readme，发布到npmjs       
+2018/04/24:  重构代码，导出其它功能函数到utils的funs.js里面。更新readme。增加config文件夹和db文件，之后写数据库配置吧(mongo)。
+
 # 如何开发
 
 ```

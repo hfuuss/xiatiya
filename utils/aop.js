@@ -1,4 +1,4 @@
-
+var readline = require('readline');
 
 /**
  * Install an around function; AOP.增加一道料

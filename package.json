@@ -10,7 +10,7 @@
   "main": "bin/xiatiya",
   "preferGlobal": true,
   "bin": {
-    "xietiya": "./bin/xiatiya"
+    "xiatiya": "./bin/xiatiya"
   },
   "devDependencies": {
     "mocha": "2.5.3",
