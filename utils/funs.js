@@ -147,7 +147,7 @@ function launchedFromCmd() {
  */
 
 function createApplication(app_name, path,program) {
-  var wait = 5;
+  var wait = 8; //
 
   console.log();
   function complete() {
@@ -169,6 +169,8 @@ function createApplication(app_name, path,program) {
     console.log();
   }
 
+
+
   // JavaScript 原始文件
   var app = loadTemplate('js/app.js');
   var www = loadTemplate('js/www');
@@ -181,8 +183,39 @@ function createApplication(app_name, path,program) {
   var stylus = loadTemplate('css/style.styl');
   var compass = loadTemplate('css/style.scss');
   var sass = loadTemplate('css/style.sass');
+ 
+  // CONFIG
+  var dbconfig = loadTemplate('config/db.js');
+  //loadMVC
+  var student = loadTemplate('models/Student.js');
+  var studentCtrl = loadTemplate('controllers/studentCtrl.js');
+  //MOCK 数据
+  var mock = loadTemplate('mock/mock.js');
 
-  mkdir(path, function(){//创建文件夹
+    ////创建文件夹
+  mkdir(path, function(){
+
+    //写mockjs
+    write(path + '/mock.js',mock);
+   
+    //MVC文件夹
+    mkdir(path + '/models',function(){
+      write(path + '/models/Student.js',student);
+      complete();
+    });
+
+    mkdir(path + '/controllers',function(){
+      write(path + '/controllers/studentCtrl.js',studentCtrl)
+      complete();
+    });
+
+    //配置文件
+    mkdir(path + '/config',function(){
+      write(path + '/config/db.js',dbconfig);
+      complete();
+    });
+
+    //静态文件夹
     mkdir(path + '/public');
     mkdir(path + '/public/javascripts');
     mkdir(path + '/public/images');
@@ -269,6 +302,7 @@ function createApplication(app_name, path,program) {
         app = app.replace('{css}', '');
     }
 
+    
     // Template support
     app = app.replace('{views}', program.view);
 
@@ -284,9 +318,11 @@ function createApplication(app_name, path,program) {
           'cookie-parser': '~1.4.3',
           'debug': '~2.2.0',
           'morgan': '~1.7.0',
-          'serve-favicon': '~2.3.0'
+          'serve-favicon': '~2.3.0',
+          "mockjs": "^1.0.1-beta3",
+          "mongoose": "^4.13.12"
       }
-    }
+    }  
 
     switch (program.view) {
       case 'jade':

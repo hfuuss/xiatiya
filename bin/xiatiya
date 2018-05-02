@@ -100,10 +100,10 @@ function main() {
     if (program.pug) program.view = 'pug'
   }
 
-  // Default view engine 如果没有设置，默认引擎为jade
+  // Default view engine 如果没有设置，默认引擎为ejs
   if (program.view === undefined) {
     warning("the default view engine will not be jade in future releases\nuse `--view=jade' or `--help' for additional options")
-    program.view = 'jade'
+    program.view = 'ejs'
   }
 
   // Generate application 创建应用
