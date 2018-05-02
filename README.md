@@ -19,7 +19,7 @@
 # 时间节点
 2018/04/21:  项目启动，导出AOP函数到utils的aop.js里面，更新readme，发布到npmjs       
 2018/04/24:  重构代码，导出其它功能函数到utils的funs.js里面。更新readme。增加config文件夹和db文件，之后写数据库配置吧(mongo)。    
-2018/04/24:  增加了config/db文件；增加了mock/mock.js文件。增加models和controllers文件夹和例子。
+2018/05/02:  增加了config/db文件；增加了mock/mock.js文件。增加models和controllers文件夹和例子。
 
 # 如何开发
 
