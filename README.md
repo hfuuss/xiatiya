@@ -6,7 +6,7 @@
 `1、 npm install xiatiya -g`    
 `2、 xiatiya app`    
 `3、 cd app && npm install`    
-`4、 node mock.js #前提要开启mogon数据库`    
+`4、 node mock.js #前提要开启mongo数据库`    
 `5、 npm start`    
 `6、 访问http://localhost:3000/students?keyword=张` 
 
